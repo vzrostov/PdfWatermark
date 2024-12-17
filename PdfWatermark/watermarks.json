@@ -1,43 +1,58 @@
 {
-  "Watermarks": {
-    "Texts": [
-      {
-        "Text": "Text1",
-        "Point": {
-          "X": 3,
-          "Y": 23
-        },
-        "Size": {
-          "Width": 43,
-          "Height": 33
-        },
-        "Font": {
-          "Name": "Arial",
-          "Size": 12
-        },
-        "Brush": {
-          "Type": "Solid",
-          "Color": {
-            "A": 133,
-            "R": 128,
-            "G": 0,
-            "B": 255
+  "Drawer": {
+    "PdfIn": "c:\\in.pdf",
+    "PdfOut": "c:\\out.pdf",
+
+    "Watermarks": {
+      "Texts": [
+        {
+          "Text": "Text1",
+          "Point": {
+            "X": 3,
+            "Y": 23
+          },
+          "Size": {
+            "Width": 43,
+            "Height": 33
+          },
+          "Font": {
+            "Name": "Arial",
+            "Size": 12
+          },
+          "Brush": {
+            "Type": "Solid",
+            "Color": {
+              "A": 133,
+              "R": 128,
+              "G": 0,
+              "B": 255
+            }
+          },
+          "Format": {
+            "Alignment": "Far",
+            "LineAlignment": "Center"
           }
         },
-        "Format": {
-          "Alignment": "Far",
-          "LineAlignment": "Center"
+        {
+          "Text": "Text2"
         }
-      }
-    ],
-    "Images": [
-      {
-        "FileName": "c:\\qqq.png",
-        "Point": {
-          "X": 3.7,
-          "Y": 23
+      ],
+      "Images": [
+        {
+          "FileName": "c:\\qqq.png",
+          "Point": {
+            "X": 3.7,
+            "Y": 23
+          }
+        },
+        {
+          "FileName": "c:\\qqq2.png",
+          "Point": {
+            "X": 3.27,
+            "Y": 2.23
+          }
         }
-      }
-    ]
+      ]
+    }
   }
 }

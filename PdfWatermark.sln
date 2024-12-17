@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfWatermark", "PdfWatermark\PdfWatermark.csproj", "{8E52B105-8308-44D1-B211-9FA258B3DE7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfWatermark.Domain", "Pdf.Watermark.Domain\PdfWatermark.Domain.csproj", "{D64E0B54-0718-452A-8FF2-5D41A4A07519}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfWatermark.Domain", "PdfWatermark.Domain\PdfWatermark.Domain.csproj", "{D64E0B54-0718-452A-8FF2-5D41A4A07519}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfWatermark.ApplicationCore", "PdfWatermark.ApplicationCore\PdfWatermark.ApplicationCore.csproj", "{B476C8C0-31C4-4ACF-A0D3-C0988CAB95D5}"
 EndProject

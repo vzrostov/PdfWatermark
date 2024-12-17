@@ -1,0 +1,43 @@
+{
+  "Watermarks": {
+    "Texts": [
+      {
+        "Text": "Text1",
+        "Point": {
+          "X": 3,
+          "Y": 23
+        },
+        "Size": {
+          "Width": 43,
+          "Height": 33
+        },
+        "Font": {
+          "Name": "Arial",
+          "Size": 12
+        },
+        "Brush": {
+          "Type": "Solid",
+          "Color": {
+            "A": 133,
+            "R": 128,
+            "G": 0,
+            "B": 255
+          }
+        },
+        "Format": {
+          "Alignment": 1,
+          "LineAlignment": 2
+        }
+      }
+    ],
+    "Images": [
+      {
+        "FileName": "i1",
+        "Point": {
+          "X": 3.7,
+          "Y": 23
+        }
+      }
+    ]
+  }
+}

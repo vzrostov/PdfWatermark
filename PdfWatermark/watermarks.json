@@ -25,14 +25,14 @@
           }
         },
         "Format": {
-          "Alignment": 1,
-          "LineAlignment": 2
+          "Alignment": "Far",
+          "LineAlignment": "Center"
         }
       }
     ],
     "Images": [
       {
-        "FileName": "i1",
+        "FileName": "c:\\qqq.png",
         "Point": {
           "X": 3.7,
           "Y": 23

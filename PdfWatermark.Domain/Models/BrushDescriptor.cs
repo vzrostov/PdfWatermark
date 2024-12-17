@@ -1,10 +1,7 @@
-﻿using PdfSharp.Drawing;
+﻿namespace PdfWatermark.Domain.Models;
 
-namespace PdfWatermark.Domain.Models
+public class BrushDescriptor
 {
-    public class BrushDescriptor
-    {
-        public string? Type { get; set; }
-        public ColorDescriptor? Color { get; set; }
-    }
+    public string? Type { get; set; }
+    public ColorDescriptor? Color { get; set; }
 }

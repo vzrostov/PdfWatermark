@@ -1,7 +1,6 @@
-﻿namespace PdfWatermark.Domain.Interfaces
+﻿namespace PdfWatermark.Domain.Interfaces;
+
+public interface ILocation
 {
-    public interface ILocation
-    {
-        public string FileName { get; set; }
-    }
+    public string FileName { get; set; }
 }

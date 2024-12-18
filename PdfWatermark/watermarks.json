@@ -1,8 +1,9 @@
 {
   "Drawer": {
-    "PdfIn": "c:\\in.pdf",
-    "PdfOut": "c:\\out.pdf",
-
+    "Saver": {
+      "PdfIn": "c:\\tmp\\in.pdf",
+      "PdfOut": "c:\\tmp\\out.pdf"
+    },
     "Watermarks": {
       "Texts": [
         {

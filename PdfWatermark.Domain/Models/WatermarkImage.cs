@@ -1,4 +1,5 @@
 ﻿using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using PdfWatermark.Domain.Interfaces;
 
 namespace PdfWatermark.Domain.Models
@@ -9,7 +10,7 @@ namespace PdfWatermark.Domain.Models
 
         public string FileName { get; set; } = null!;
 
-        public override void Draw()
+        public override void Draw(PdfDocument? document)
         {
             Console.WriteLine($"WatermarkImage {FileName} Draw!");
         }

@@ -1,4 +1,5 @@
 ﻿using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 using PdfWatermark.Domain.Interfaces;
 
 namespace PdfWatermark.Domain.Models;
@@ -21,7 +22,7 @@ public sealed class WatermarkText : BaseWatermark, IWatermarkText
     
     public XSize Size { get; set; }
 
-    public override void Draw()
+    public override void Draw(PdfDocument? document)
     {
         Console.WriteLine($"WatermarkText {Text} Draw!");
     }

@@ -1,4 +1,5 @@
-﻿using PdfWatermark.Domain.Models;
+﻿using PdfSharp.Pdf;
+using PdfWatermark.Domain.Models;
 
 namespace PdfWatermark.ApplicationCore.Logic;
 
@@ -8,10 +9,10 @@ public class Watermarks
 
     public List<WatermarkImage>? Images { get; set; }
 
-    public void Draw()
+    public void Draw(PdfDocument? document)
     {
-        Texts?.ForEach(x => x.Draw());
-        Images?.ForEach(x => x.Draw());
+        Texts?.ForEach(x => x.Draw(document));
+        Images?.ForEach(x => x.Draw(document));
     }
 
     public override string ToString()

@@ -1,6 +1,6 @@
 ﻿using PdfSharp.Drawing;
-using PdfSharp.Pdf;
 using PdfWatermark.Domain.Interfaces;
+using PdfWatermark.Domain.Utils;
 
 namespace PdfWatermark.Domain.Models
 {
@@ -10,9 +10,27 @@ namespace PdfWatermark.Domain.Models
 
         public string FileName { get; set; } = null!;
 
-        public override void Draw(PdfDocument? document)
+        private XImage? Image { get; set; } = null;
+
+        public override void Draw(XGraphics gfx)
         {
             Console.WriteLine($"WatermarkImage {FileName} Draw!");
+
+            if(Image == null)
+            {
+                try
+                {
+                    Image = XImage.FromFile(FileName);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Ошибка чтения файла-рисунка {FileName}");
+                    ConsoleUtils.WriteRedLine(ex);
+                    return;
+                }
+            }
+            
+            gfx.DrawImage(Image, Point);
         }
     }
 }

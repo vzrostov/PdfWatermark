@@ -1,4 +1,4 @@
-﻿using PdfSharp.Pdf;
+﻿using PdfSharp.Drawing;
 
 namespace PdfWatermark.Domain.Models;
 
@@ -6,5 +6,5 @@ public abstract class BaseWatermark
 {
     public virtual bool IsVisible { get; set; } = true;
 
-    public abstract void Draw(PdfDocument? document);
+    public abstract void Draw(XGraphics gfx);
 }

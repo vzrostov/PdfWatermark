@@ -3,5 +3,5 @@
 public class BrushDescriptor
 {
     public string? Type { get; set; }
-    public ColorDescriptor? Color { get; set; }
+    public string? Color { get; set; }
 }

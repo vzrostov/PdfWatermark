@@ -7,10 +7,10 @@
     "Watermarks": {
       "Texts": [
         {
-          "Text": "Text1",
+          "Text": "Begin Text1Text1Text1Text1Text1 Text1Text1Text1Text1 End",
           "Point": {
-            "X": 3,
-            "Y": 23
+            "X": 20,
+            "Y": 20
           },
           "Size": {
             "Width": 43,
@@ -22,35 +22,51 @@
           },
           "Brush": {
             "Type": "Solid",
-            "Color": {
-              "A": 133,
-              "R": 128,
-              "G": 0,
-              "B": 255
-            }
+            "Color": "#FF00FF00"
           },
           "Format": {
-            "Alignment": "Far",
-            "LineAlignment": "Center"
+            "Alignment": "Near",
+            "LineAlignment": "Near"
           }
         },
         {
-          "Text": "Text2"
+          "Text": "Begin Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 End",
+          "Point": {
+            "X": 30,
+            "Y": 30
+          },
+          "Size": {
+            "Width": 43,
+            "Height": 33
+          },
+          "Font": {
+            "Name": "Arial",
+            "Size": 18
+          },
+          "Brush": {
+            "Type": "Solid",
+            "Color": "#444400FF"
+          },
+          "Format": {
+            "Alignment": "Near",
+            "LineAlignment": "Near"
+          }
         }
       ],
       "Images": [
         {
-          "FileName": "c:\\qqq.png",
+          "FileName": "c:\\tmp\\l.png",
+          "IsAbsoluteCoords": true,
           "Point": {
-            "X": 3.7,
-            "Y": 23
+            "X": 5,
+            "Y": 5
           }
         },
         {
-          "FileName": "c:\\qqq2.png",
+          "FileName": "c:\\tmp\\poni.png",
           "Point": {
-            "X": 3.27,
-            "Y": 2.23
+            "X": 0,
+            "Y": 70
           }
         }
       ]

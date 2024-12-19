@@ -1,5 +1,6 @@
 ﻿using PdfSharp.Pdf.IO;
 using PdfSharp.Pdf;
+using PdfWatermark.Domain.Utils;
 
 namespace PdfWatermark.ApplicationCore.Logic;
 
@@ -25,7 +26,7 @@ public class Saver
         catch (Exception ex)
         {
             Console.WriteLine($"Ошибка очистки {PdfOut}");
-            WriteRedLine(ex);
+            ConsoleUtils.WriteRedLine(ex);
             return false;
         }
 
@@ -39,7 +40,7 @@ public class Saver
         catch (Exception ex)
         {
             Console.WriteLine($"Ошибка создания {PdfIn}");
-            WriteRedLine(ex);
+            ConsoleUtils.WriteRedLine(ex);
             return false;
         }
 
@@ -61,18 +62,10 @@ public class Saver
         catch (Exception ex)
         {
             Console.WriteLine($"Ошибка записи {PdfOut}");
-            WriteRedLine(ex);
+            ConsoleUtils.WriteRedLine(ex);
             return false;
         }
 
         return true;
-    }
-
-    private static void WriteRedLine(Exception ex)
-    {
-        var originalColor = Console.ForegroundColor;
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine(ex.Message);
-        Console.ForegroundColor = originalColor;
     }
 }

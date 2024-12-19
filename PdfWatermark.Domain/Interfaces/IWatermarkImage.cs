@@ -2,6 +2,6 @@
 
 namespace PdfWatermark.Domain.Interfaces;
 
-public interface IWatermarkImage : IPosition, ILocation
+public interface IWatermarkImage : ILocation
 {
 }

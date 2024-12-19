@@ -3,7 +3,7 @@ using PdfWatermark.Domain.Models;
 
 namespace PdfWatermark.Domain.Interfaces;
 
-public interface IWatermarkText : IPosition, ISize
+public interface IWatermarkText
 {
     public string Text { get; set; }
     public FontDescriptor? Font { get; set; }

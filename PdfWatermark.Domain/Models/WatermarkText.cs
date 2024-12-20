@@ -29,6 +29,8 @@ public sealed class WatermarkText : BaseWatermark, IWatermarkText
             XColor.FromArgb(255, 0, 0, 0));
         var format = Format ?? DefaultFormat;
 
-        gfx.DrawString(Text, font, brush, GetAbsoluteCoordsPosition(gfx.PageSize), format);
+        var pos = GetAbsolutePositionCoords(gfx.PageSize);
+
+        gfx.DrawString(Text, font, brush, pos, format);
     }
 }

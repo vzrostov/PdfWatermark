@@ -18,7 +18,7 @@
           },
           "Font": {
             "Name": "Arial",
-            "Size": 12
+            "Size": 16
           },
           "Brush": {
             "Type": "Solid",
@@ -56,7 +56,11 @@
       "Images": [
         {
           "FileName": "c:\\tmp\\l.png",
-          "IsAbsoluteCoords": true,
+          "IsAbsolutePositionCoords": true,
+          "Size": {
+            "Width": 200,
+            "Height": 200
+          },
           "Point": {
             "X": 5,
             "Y": 5
@@ -64,9 +68,14 @@
         },
         {
           "FileName": "c:\\tmp\\poni.png",
+          "1IsAbsoluteSizeCoords": true,
+          "Size": {
+            "Width": 30,
+            "Height": 30
+          },
           "Point": {
             "X": 0,
-            "Y": 70
+            "Y": 50
           }
         }
       ]

@@ -1,17 +1,39 @@
-﻿namespace PdfWatermark.ApplicationCore.Logic;
+﻿using PdfWatermark.Domain.Utils;
+
+namespace PdfWatermark.ApplicationCore.Logic;
 
 public class Drawer
 {
     public Watermarks Watermarks { get; set; } = null!;
 
-    public Saver Saver { get; set; } = null!;
+    public Saver? Saver { get; set; }
 
-    public void Draw()
+    public bool Draw()
     {
-        if(Saver.Prepare())
+        if(Saver == null)
         {
-            Watermarks.Draw(Saver.Document);
-            Saver.Save();
+            ConsoleUtils.WriteRedLine("Saver is not specified!");
+            return false;
         }
+        if (Saver.PdfIn == null)
+        {
+            ConsoleUtils.WriteRedLine("Saver.PdfIn is not specified!");
+            return false;
+        }
+        if (Saver.PdfOut == null)
+        {
+            ConsoleUtils.WriteRedLine("Saver.PdfOut is not specified!");
+            return false;
+        }
+
+        if (!Saver.Prepare())
+        {
+            return false;
+        }
+
+        Watermarks.Draw(Saver.Document);
+        Saver.Save();
+
+        return true;
     }
 }

@@ -10,9 +10,13 @@ public class Watermarks
 
     public List<WatermarkImage>? Images { get; set; }
 
+    public int TotalCount => Texts?.Count ?? 0 + Images?.Count ?? 0;
+
+    public Resolver? Resolver { get; set; }
+
     public void Draw(PdfDocument? document)
     {
-        for (int idx = 0; idx < document?.Pages.Count; idx++)
+        for (var idx = 0; idx < document?.Pages.Count; idx++)
         {
             var page = document.Pages[idx];
 
@@ -22,13 +26,13 @@ public class Watermarks
             {
                 AdjustInitialPoint(gfx, page);
 
-                Images?.ForEach(x => x.Draw(gfx));
+                Images?.ForEach(x => { x.FileName = GetResolvedFileName(x.FileName); x.Draw(gfx); });
                 Texts?.ForEach(x => x.Draw(gfx));
             }
         }
     }
 
-    void AdjustInitialPoint(XGraphics gfx, PdfPage page)
+    private static void AdjustInitialPoint(XGraphics gfx, PdfPage page)
     {
         if (page.Orientation == PdfSharp.PageOrientation.Landscape)
         //if (page.Rotate == 270)
@@ -43,6 +47,12 @@ public class Watermarks
             gfx.ScaleTransform(1, 1);
         }
     }
+
+    private string GetResolvedFileName(string fileName) =>
+        Resolver?.ResourceDirectoryPath == null ?
+        fileName
+        :
+        Path.Combine(Resolver.ResourceDirectoryPath!, fileName.TrimStart('/'));
 
     public override string ToString()
     {

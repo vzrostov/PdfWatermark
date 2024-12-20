@@ -6,9 +6,9 @@ namespace PdfWatermark.ApplicationCore.Logic;
 
 public class Saver
 {
-    public string PdfIn { get; set; } = null!;
+    public string PdfSource { get; set; } = null!;
 
-    public string PdfOut { get; set; } = null!;
+    public string PdfTarget { get; set; } = null!;
 
     public PdfDocument? Document { get; private set; } = null;
 
@@ -21,25 +21,27 @@ public class Saver
 
         try
         {
-            File.Delete(PdfOut);
+            File.Delete(PdfTarget);
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Ошибка очистки {PdfOut}");
+            Console.WriteLine($"Removing error {PdfTarget}");
             ConsoleUtils.WriteRedLine(ex);
             return false;
         }
 
         try
         {
-            Document = PdfReader.Open(PdfIn);
+            Document = PdfReader.Open(PdfSource);
 
             if (Document.Version < 14)
+            {
                 Document.Version = 14;
+            }
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Ошибка создания {PdfIn}");
+            Console.WriteLine($"Creation error {PdfSource}");
             ConsoleUtils.WriteRedLine(ex);
             return false;
         }
@@ -51,17 +53,17 @@ public class Saver
     {
         if (Document == null)
         {
-            Console.WriteLine($"Ошибка записи, документ не подготовлен {PdfOut}");
+            Console.WriteLine($"Write error, document was not prepared {PdfTarget}");
             return false;
         }
 
         try
         {
-            Document!.Save(PdfOut);
+            Document!.Save(PdfTarget);
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Ошибка записи {PdfOut}");
+            Console.WriteLine($"Write error {PdfTarget}");
             ConsoleUtils.WriteRedLine(ex);
             return false;
         }

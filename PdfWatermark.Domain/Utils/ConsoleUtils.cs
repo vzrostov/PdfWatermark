@@ -9,4 +9,12 @@ public static class ConsoleUtils
         Console.WriteLine(ex.Message);
         Console.ForegroundColor = originalColor;
     }
+
+    public static void WriteRedLine(string line)
+    {
+        var originalColor = Console.ForegroundColor;
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine(line);
+        Console.ForegroundColor = originalColor;
+    }
 }

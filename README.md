@@ -50,9 +50,23 @@ var builder = Host.CreateDefaultBuilder(args)
     .ConfigureServices((context, services) =>
     {
         services.Configure<Drawer>(context.Configuration.GetSection(nameof(Drawer)));
+        services.AddSingleton<MyService>();
     });
 
 var app = builder.Build();
+
+...
+
+class MyService
+{
+    private Drawer? _drawer;
+    public MyService(IOptions<Drawer> drawerOptions)
+    {
+        _drawer = drawerOptions.Value;
+        _drawer?.Draw();
+    }
+}
+
 ```
 
 ## Requirements

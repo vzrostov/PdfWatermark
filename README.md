@@ -15,7 +15,9 @@
 
 - **Batch Processing**: Apply watermarks to multiple PDF files at once.
   
-- **Absolute or Relative Coordinates**: Fixed positioning and sizing, useful for precise placement but less flexible (absolute). Positioning and sizing based on percentages, allowing for adaptability across different sizes and resolutions (relative). This flexibility in defining coordinates makes it easier to create responsive designs and ensures that watermarks appear consistently across various viewing environments.
+- **Absolute or Relative Coordinates**: This flexibility in defining coordinates makes it easier to create responsive designs and ensures that watermarks appear consistently across various viewing environments.
+  - Fixed positioning and sizing, useful for precise placement but less flexible (absolute).
+  - Positioning and sizing based on percentages, allowing for adaptability across different sizes and resolutions (relative). 
 
 ## Requirements
 

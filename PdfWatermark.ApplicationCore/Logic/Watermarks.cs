@@ -28,7 +28,7 @@ public class Watermarks
         }
     }
 
-    void AdjustInitialPoint(XGraphics gfx, PdfPage page)
+    static void AdjustInitialPoint(XGraphics gfx, PdfPage page)
     {
         if (page.Orientation == PdfSharp.PageOrientation.Landscape)
         //if (page.Rotate == 270)

@@ -25,7 +25,7 @@ public class Saver
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Ошибка очистки {PdfOut}");
+            Console.WriteLine($"Removing error {PdfOut}");
             ConsoleUtils.WriteRedLine(ex);
             return false;
         }
@@ -39,7 +39,7 @@ public class Saver
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Ошибка создания {PdfIn}");
+            Console.WriteLine($"Creation error {PdfIn}");
             ConsoleUtils.WriteRedLine(ex);
             return false;
         }
@@ -51,7 +51,7 @@ public class Saver
     {
         if (Document == null)
         {
-            Console.WriteLine($"Ошибка записи, документ не подготовлен {PdfOut}");
+            Console.WriteLine($"Write error, document was not prepared {PdfOut}");
             return false;
         }
 
@@ -61,7 +61,7 @@ public class Saver
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Ошибка записи {PdfOut}");
+            Console.WriteLine($"Write error {PdfOut}");
             ConsoleUtils.WriteRedLine(ex);
             return false;
         }

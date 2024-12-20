@@ -19,6 +19,42 @@
   - Fixed positioning and sizing, useful for precise placement but less flexible (absolute).
   - Positioning and sizing based on percentages, allowing for adaptability across different sizes and resolutions (relative). 
 
+## Code integration
+
+```csharp
+var builder = Host.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration((context, config) =>
+    {
+        config.SetBasePath(AppContext.BaseDirectory)
+              .AddJsonFile("watermarks.json", optional: true, reloadOnChange: false);
+    });
+
+var app = builder.Build();
+
+var config = app.Services.GetRequiredService<IConfiguration>();
+var drawerSection = config.GetSection(nameof(Drawer));
+var drawer = drawerSection.Get<Drawer>();
+
+drawer?.Draw();
+```
+
+or
+
+```csharp
+var builder = Host.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration((context, config) =>
+    {
+        config.SetBasePath(AppContext.BaseDirectory)
+              .AddJsonFile("watermarks.json", optional: true, reloadOnChange: false);
+    })
+    .ConfigureServices((context, services) =>
+    {
+        services.Configure<Drawer>(context.Configuration.GetSection(nameof(Drawer)));
+    });
+
+var app = builder.Build();
+```
+
 ## Requirements
 
 - .NET Core 8
